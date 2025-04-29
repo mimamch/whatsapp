@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Options, ExposedOptions } from "./types/options";
-import { sendMessageWithTemplate } from "./message";
+import { sendMessage, sendMessageWithTemplate } from "./message";
 import { createUtils } from "./utils";
 
 /**
@@ -23,5 +23,6 @@ export const createClient = (options: ExposedOptions) => {
   return {
     utils: createUtils(opt),
     sendMessageWithTemplate: sendMessageWithTemplate(opt),
+    sendMessage: sendMessage(opt),
   };
 };

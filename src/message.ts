@@ -1,8 +1,11 @@
-import { SendMessageWithTemplateRequest } from "./types/message";
+import {
+  SendMessageRequest,
+  SendMessageWithTemplateRequest,
+} from "./types/message";
 import { Options } from "./types/options";
 
 /**
- * @param id direct message id
+ * Send a message with a template to a WhatsApp number.
  */
 export const sendMessageWithTemplate =
   (options: Options) => async (props: SendMessageWithTemplateRequest) => {
@@ -30,6 +33,36 @@ export const sendMessageWithTemplate =
               }))
             : undefined,
         },
+      }
+    );
+    return response.data as {
+      messaging_product: "whatsapp";
+      contacts: Array<{ input: string; wa_id: string }>;
+      messages: Array<{
+        id: string;
+        message_status: string;
+      }>;
+    };
+  };
+
+/**
+ * Send a message - only work if receiver has already messaged the sender first for last 24 hours
+ */
+export const sendMessage =
+  (options: Options) => async (props: SendMessageRequest) => {
+    const response = await options.axios.post(
+      `/${props.phoneNumberId}/messages`,
+      {
+        messaging_product: "whatsapp",
+        to: props.to,
+        text: {
+          body: props.text,
+        },
+        context: props.context_message_id
+          ? {
+              message_id: props.context_message_id,
+            }
+          : undefined,
       }
     );
     return response.data as {

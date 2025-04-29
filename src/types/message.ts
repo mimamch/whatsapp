@@ -19,3 +19,8 @@ export type SendMessageWithTemplateRequest = SendMessageMandatoryFields & {
   templateLanguageCode: string;
   templateParameters?: Array<SendMessageTemplateComponents>;
 };
+
+export type SendMessageRequest = SendMessageMandatoryFields & {
+  text: string;
+  context_message_id?: string;
+};
