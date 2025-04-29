@@ -19,9 +19,9 @@
   "author": "Muhammad Imam Choirudin <mimamch28@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mimamch/wa.git"
+    "url": "https://github.com/mimamch/whatsapp.git"
   },
-  "homepage": "https://github.com/mimamch/wa",
+  "homepage": "https://github.com/mimamch/whatsapp",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.13.1",
