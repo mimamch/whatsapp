@@ -1,5 +1,5 @@
 {
-  "name": "@mimamch/whatsapp",
+  "name": "whatsapp-api-client",
   "version": "0.0.4-alpha",
   "private": false,
   "description": "Whatsapp Business API Official Client",

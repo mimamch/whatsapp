@@ -6,7 +6,7 @@ And Visit [Platform WhatsApp Business](https://developers.facebook.com/docs/what
 ## Installation
 
 ```bash
-npm install @mimamch/whatsapp
+npm install whatsapp-api-client
 ```
 
 ## Usage
@@ -14,9 +14,9 @@ npm install @mimamch/whatsapp
 ### Import package into your code
 
 ```js
-import whatsapp from "@mimamch/whatsapp";
+import whatsapp from "whatsapp-api-client";
 // or for CommonJS
-const whatsapp = require("@mimamch/whatsapp");
+const whatsapp = require("whatsapp-api-client");
 ```
 
 ### Create instance
